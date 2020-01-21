@@ -1,0 +1,28 @@
+public abstract class Worker implements Payable, Taxable{
+ 
+  private String name;
+  private String company;
+  
+  public Worker(String n, String c){
+   name = n;
+   company = c;
+  }
+  
+  public String getName(){ return name;}
+  public String getCompany(){ return company;}
+
+    public String toString(){
+     System.out.print( getName());
+     System.out.print( getCompany());
+     //System.out.print( getPay());
+     //System.out.print( getTax());
+   }
+
+  //You need to add more behavior (Methods) here
+  //getPay() and getTax() are abstract here because you implemented Payable and Taxable
+  //but the Worker class remains abstract because you won't implement one of those methods
+  //here.  Also, don't forget the toString().  It is the same for ALL Workers
+ public abstract double getPay();
+ public abstract double getTax();
+  
+}

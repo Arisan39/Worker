@@ -1,0 +1,21 @@
+public class SalaryWorker extends Worker{
+private double salary;
+public SalaryWorker(String n, String c, double s){
+  super( n, c);
+  salary = s;
+}
+public double getPay(){
+  return salary;
+}
+public double getTax(){
+  if( getPay() >= 0 && getPay() <= 40000)
+   return getPay() * .10;
+  else 
+   return getPay() * .25;
+}
+public String toString(){
+  super.toString();
+  System.out.print(getPay());
+  System.out.print(getTax());
+}
+}

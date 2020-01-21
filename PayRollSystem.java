@@ -1,0 +1,46 @@
+import java.util.*;
+public class PayRollSystem{
+ private List<Worker> workers; 
+  
+ public  PayRollSystem(){
+   workers = new ArrayList<Worker>(); 
+ }
+ 
+ 
+ public void addWorker(Worker w){
+   workers.add(w); 
+ }
+ 
+ 
+ //return total PAY for ALL workers in the company given
+ public double getTotalPayByCompany(String company){
+  double sum = 0;
+   for( Worker each : workers ){
+  if( each.getCompany().equals(company))
+     sum += each.getPay();
+   }
+  
+   return sum;
+ }
+
+
+//return a String listing ALL the workers that have a PAY higher than threshold
+public String getAllWorkers(double threshold ){
+  String ret = "";
+  for( Worker each : workers ){
+    if(each.getPay() > threshold)
+    ret += each.getName()+", ";
+  }
+  return ret;
+}
+ 
+ 
+ //invoke toString for all Workers in the system
+ public String toString(){
+   String ret = "";
+   for( Worker each : workers){
+    ret += each.toString();
+ }
+ return ret;
+  
+ }}

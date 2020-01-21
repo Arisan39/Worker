@@ -1,0 +1,24 @@
+public class CommissionedWorker extends Worker{
+  private double commission;
+  private double sale;
+  public CommissionedWorker( String n, String c, double com, double s){
+    super(n, c);
+    commission = com;
+    sale = s;
+  }
+  public double getPay(){
+    return commission * sale;
+  }
+  public double getTax(){
+    if( getPay() >= 0 && getPay() <= 40000)
+       return getPay() * .10;
+    else 
+      return getPay() * .25;
+    
+  }
+  public String toString(){
+  super.toString();
+  System.out.print(getPay());
+  System.out.print(getTax());
+  }
+}
